@@ -1,0 +1,47 @@
+nav{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.divider{
+    margin: 10px 0;
+}
+.table thead tr{
+    text-align: center;
+}
+.result{
+    display: none;
+}
+.not-found{
+    text-align: center;
+}
+
+.card-commits{
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    position: relative;
+}
+.card-commits .img-avatar{
+    width: 50px;
+}
+.card-commits .message{
+    font-weight: bold;
+}
+.card-commits .btn-info{
+    position: absolute;
+    bottom: 6px;
+    right: 30px;
+    padding: 2px 12px;
+}
+.more-info{
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    text-align: center;
+}
+.more-info img{
+    width: 60px;
+}
