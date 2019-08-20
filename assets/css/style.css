@@ -30,6 +30,7 @@ nav{
 }
 .card-commits .message{
     font-weight: bold;
+    word-break: break-word;
 }
 .card-commits .btn-info{
     position: absolute;
@@ -37,6 +38,11 @@ nav{
     right: 30px;
     padding: 2px 12px;
 }
+@media only screen and (max-width:767px){
+    .card-commits .btn-info{
+        right: 5px;
+    }
+} 
 .more-info{
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.125);
