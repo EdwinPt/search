@@ -19,6 +19,6 @@ class Commit_model extends CI_Model {
             'code_status' => $code_status,
             'text_status' => $text_status
         );
-        $this->db->insert('busquedas',$data);
+        $this->db->insert('busqueda',$data);
     }
 }

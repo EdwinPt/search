@@ -41,7 +41,14 @@ nav{
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.125);
     text-align: center;
+    padding: 5px 5px;
 }
 .more-info img{
     width: 60px;
+}
+.url_repo{
+    word-break: break-word;
+}
+.url_repo a{
+    color: #000;
 }

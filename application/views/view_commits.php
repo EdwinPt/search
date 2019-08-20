@@ -14,7 +14,9 @@
     <div class="container mt-3">
         <?php $count = 0; ?>
         <?php foreach($items as $item):?>
-        <?php $count++;?>
+        <?php $count++;
+              $author = ($item['author']['login']=="")? $item['committer']['login'] : $item['author']['login'];
+        ?>
             <div class="card-commits">
                 <div class="message"><?=$item['commit']['message'];?></div>
                 <div>
@@ -22,7 +24,7 @@
                     <?php
                         $date = new DateTime($item['commit']['author']['date']);
                         $result = $date->format('d-m-Y H:i:s');
-                        echo  "<span>".($item['author']['login']=="")? $item['committer']['login'] ." committed on ".$result : $item['author']['login']." committed on ".$result."</span>"
+                        echo "<span>".$author. " committed on" .$result."</span>";
                     ?>
                 </div> 
                 <button class="btn btn-info" data-toggle="modal" data-target="#modal-<?=$count?>">Detalles</button>             
@@ -39,9 +41,10 @@
                     <div class="modal-body">
                         <div class="more-info">
                             <img class="img-avatar" src="<?=($item['author']['avatar_url']=='')? base_url('assets/img/github.png'):$item['author']['avatar_url'] ?>">
-                            <div>Autor: <?=($item['author']['login']=="")? $item['committer']['login'] : $item['author']['login']?></div>
-                            <div>Fecha: <?=$result?></div>
-                            <div class="message">Commits: <?=$item['commit']['message'];?></div>
+                            <div><b>Autor:</b> <?=$author?></div>
+                            <?=($item['commit']['author']['email']!="")? "<div class='email'><b>Correo:</b> " .$item['commit']['author']['email']. "</div>" :""?>
+                            <div><b>Fecha:</b> <?=$result?></div>
+                            <div class="message"><b>Commits:</b> <?=$item['commit']['message'];?></div>
                         </div> 
                     </div>
                     <!-- Modal footer -->

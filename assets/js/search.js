@@ -44,13 +44,13 @@ $(document).ready(function(){
                     });
                     $('.items').append(info);
                 }
-                code_status = xhr;
-                text_status = textStatus.status;
+                code_status = textStatus.status;
+                text_status = xhr;
             },
             error: function(jqXHR, textStatus){
                 alert("Ocurrió un error inesperado, intente de nuevo por favor.");
                 code_status = jqXHR.status;
-                text_status = textStatus;
+                text_status = textStatus;               
             },
             complete: function(){
                 $.ajax({
